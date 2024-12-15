@@ -1,0 +1,37 @@
+@use "mixins";
+@use "var";
+@use "media";
+
+.container {
+  max-width: calc(var.$container-width + var.$container-padding-x * 2);
+  margin-inline: auto;
+  padding-inline: var.$container-padding-x;
+}
+
+.visually-hidden {
+  @include mixins.visually-hidden();
+}
+
+.hidden-mobile {
+  @include media.mobile-s {
+    display: none !important;
+  }
+}
+
+.visible-mobile {
+  @include media.mobile-s-above {
+    display: none !important;
+  }
+}
+
+.hidden-tablet {
+  @include media.tablet {
+    display: none !important;
+  }
+}
+
+.visible-tablet {
+  @include media.tablet-above {
+    display: none !important;
+  }
+}

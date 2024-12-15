@@ -1,0 +1,28 @@
+@use "../var";
+@use "../mixins";
+@use "../media";
+
+.button {
+  @include mixins.flex-center;
+
+  font-size: 14px;
+  background-color: var.$color-accent;
+  border: 3px solid transparent;
+  column-gap: 9px;
+  color: var.$color-light;
+  padding-left: 14px;
+  padding-right: 19px;
+  border-radius: var.$border-radius;
+  cursor: pointer;
+
+  &:hover {
+    background-color: var.$color-light;
+    color: var.$color-dark;
+    border: 3px solid var.$color-accent;
+  }
+
+  @include media.mobile-s {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+}

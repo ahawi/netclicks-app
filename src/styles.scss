@@ -1,1 +1,15 @@
 /* You can add global styles to this file, and also import other style files */
+@use "styles/normalize";
+@use "styles/fonts";
+@use "styles/mixins";
+@use "styles/media";
+@use "styles/var";
+@use "styles/utils";
+@use "styles/globals";
+
+@use "styles/blocks/header" as header;
+@use "styles/blocks/section" as section;
+@use "styles/blocks/field" as field;
+@use "styles/blocks/button" as button;
+// @use "styles/blocks/film-card" as film_card;
+// @use "styles/blocks/sidebar" as sidebar;

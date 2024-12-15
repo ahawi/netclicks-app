@@ -1,0 +1,41 @@
+@use "../mixins";
+@use "../var";
+@use "../media";
+
+.field {
+  width: 100%;
+  margin: 0;
+
+  &__input {
+    font-size: 14px;
+    flex-grow: 1;
+    max-width: 100%;
+    border: 3px solid var.$color-accent;
+    border-radius: 5px;
+    height: 44px;
+    padding-inline: 31px;
+    padding-block: 0;
+    background-color: var.$color-light;
+    position: relative;
+
+    @include media.mobile-s {
+      padding-left: 17px;
+      padding-right: 0;
+    }
+
+    &::placeholder {
+      @include mixins.abs-center;
+
+      left: 111px;
+      font-size: 14px;
+
+      @include media.mobile-s {
+        left: 98px;
+      }
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
+}

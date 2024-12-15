@@ -1,0 +1,14 @@
+<section class="section container">
+  <div class="section__inner">
+    <div class="section__main">
+      <h1 class="section__main-title">Результаты поиска</h1>
+      <ul class="section__main-list">
+        @for (film of films; track film.id) {
+        <app-card [film]="film"></app-card>
+        }
+      </ul>
+    </div>
+
+    <app-sidebar></app-sidebar>
+  </div>
+</section>

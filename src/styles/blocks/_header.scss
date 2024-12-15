@@ -1,0 +1,60 @@
+@use "../var";
+@use "../media";
+
+.header {
+  margin-top: 34px;
+  margin-bottom: 42px;
+
+  @include media.mobile {
+    margin: 15px;
+    margin-bottom: 30px;
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    row-gap: 15px;
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &-description {
+      font-size: 12px;
+    }
+
+    &-login {
+      &:hover {
+        color: var.$color-accent;
+      }
+    }
+
+    &-burger-button {
+      background-color: transparent;
+      border: none;
+    }
+  }
+
+  &__logo {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__extra {
+    display: flex;
+    background-color: var.$color-accent;
+    border-radius: var.$border-radius;
+
+    &-field {
+      display: flex;
+      justify-content: space-between;
+      border-radius: var.$border-radius;
+    }
+
+    &:hover {
+      color: var.$color-accent;
+    }
+  }
+}

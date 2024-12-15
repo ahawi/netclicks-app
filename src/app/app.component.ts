@@ -1,11 +1,13 @@
 import { Component } from '@angular/core';
+import { Film } from './models/film.model';
+import { FILMS } from './constants/films.constants';
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   standalone: false,
-  styleUrl: './app.component.scss'
+  styleUrl: './app.component.scss',
 })
 export class AppComponent {
-  title = 'netclicks-app';
+  public films: Film[] = FILMS;
 }
