@@ -1,23 +1,28 @@
 import { Component, OnInit } from '@angular/core';
 import { Film } from '../../models/film.model';
 import { FILMS } from '../../constants/films.constants';
-import { ActivatedRoute, Route, Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { FilmService } from '../../services/film.service';
 
 @Component({
   selector: 'app-film',
-  templateUrl: './film.component.html',
   standalone: false,
+  templateUrl: './film.component.html',
   styleUrls: ['./film.component.scss'],
 })
 export class FilmComponent implements OnInit {
-  public films: Film[] = FILMS;
+  public films: Film[] = [];
   public film!: Film;
 
-  constructor(private _route: ActivatedRoute, private _router: Router) {}
+  constructor(
+    private _route: ActivatedRoute,
+    private _router: Router,
+    private _filmService: FilmService
+  ) {}
 
   ngOnInit(): void {
     const id = this._route.snapshot.paramMap.get('id');
-
+    this.films = this._filmService.getFullFilms;
     this._initFilm(Number(id));
   }
 
@@ -26,9 +31,8 @@ export class FilmComponent implements OnInit {
 
     if (findFilm) {
       this.film = findFilm;
-    }
-    else {
-      this._router.navigate(['/'])
+    } else {
+      this._router.navigate(['/']);
     }
   }
 }

@@ -57,12 +57,15 @@
     <div class="header__extra">
       <div class="header__extra-field field">
         <input
+          [value]="searchString"
           data-js-search
           type="text"
           class="field__input"
           placeholder="Что хотите посмотреть?"
+          (input)="updateValue($event)"
         />
         <button
+          (click)="updateSearch($event)"
           data-js-search-button
           class="header__extra-button button"
           type="button"
